@@ -216,8 +216,13 @@ void task102(int** matrix, int** matrix2, int *A, int *B, int a, int b) {
 void print_matrix(FILE* out, int** matrix, int rows, int cols) {
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
-      fprintf(out, "%d ", matrix[i][j]);
+      fprintf(out, "%d", matrix[i][j]);
+      if (j < cols - 1) {
+        fprintf(out, " ");
+      }
     }
-    fprintf(out, "\n");
+    if (i < rows - 1) {
+     fprintf(out, "\n");
+    }
   }
 }
