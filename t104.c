@@ -222,7 +222,7 @@ void task104(int** matrix, int** matrix2, int *A, int *B, int a, int b) {
           }
         }
       } else {
-        matrix[A[i]][B[j]] = 0;
+        matrix2[A[i]][B[j]] = 0;
       }
     }
   }
