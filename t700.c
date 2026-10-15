@@ -109,24 +109,6 @@ int main(void) {
     return 0;
 }
 
-void print_array(int *array, int size) {
-    for (int i = 0; i < size; i++)
-    {
-        printf("%d ", array[i]);
-    }
-    printf("\n");
-}
-
-void print_debug(int *a, int* min, int k, int** matrix) {
-    printf("  a: ");
-    print_array(a, k);
-    printf("min: ");
-    print_array(min, k);
-    print_matrix(stdout, matrix, 3, 7);
-    printf("\n");
-    printf("\n");
-}
-
 int task700 (int **matrix, int rows, int *a, int k) {
   int *min = malloc(k * sizeof(int));
   if (!min) {
@@ -151,8 +133,6 @@ int task700 (int **matrix, int rows, int *a, int k) {
   free(min);
   return 0;
 }
-
-
 
 int correct_col(int **matrix, int rows, int j, int M) {
     int c = 0;
