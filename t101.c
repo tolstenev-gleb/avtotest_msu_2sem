@@ -113,14 +113,7 @@ int main(void) {
       }
     }
   }
-  for (int i = 0; i < a; i++) {
-    printf("%d ", A[i]);
-  }
-  printf("\n ");
-  for (int i = 0; i < b; i++) {
-    printf("%d ", B[i]);
-  }
-  printf("\n ");
+
   // Решение задачи
   task101(matrix, A, B, a, b);
 
