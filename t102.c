@@ -31,7 +31,7 @@ int main(void) {
     return -1;
   }
 
-  // Выделение памяти под двумерный массив
+  // Выделение памяти под двумерный массив и его копию
   matrix = malloc(rows * sizeof(int*));
   if (!matrix) {
     fprintf(out, "ERROR");
@@ -40,7 +40,6 @@ int main(void) {
     return -1;
   }
 
-  // Выделение памяти под двумерный массив
   matrix2 = malloc(rows * sizeof(int*));
   if (!matrix2) {
     fprintf(out, "ERROR");
@@ -115,6 +114,8 @@ int main(void) {
     }
   }
 
+  // Выделение памяти под массив индексов строк,
+  // относящихся к подмножеству
   A = malloc(rows * sizeof(int));
   if (!A) {
     for (int k = 0; k < rows; k++) {
@@ -129,6 +130,8 @@ int main(void) {
     return -1;
   }
 
+  // Выделение памяти под массив индексов столбцов,
+  // относящихся к подмножеству
   B = malloc(cols * sizeof(int));
   if (!B) {
     for (int k = 0; k < rows; k++) {
@@ -164,20 +167,13 @@ int main(void) {
       }
     }
   }
-  // for (int i = 0; i < a; i++) {
-  //   printf("%d ", A[i]);
-  // }
-  // printf("\n ");
-  // for (int i = 0; i < b; i++) {
-  //   printf("%d ", B[i]);
-  // }
-  // printf("\n ");
+
   // Решение задачи
   task102(matrix, matrix2, A, B, a, b);  
 
   // Вывод полученной матрицы в res.txt
   fprintf(out, "%d %d %d %d\n", M, N, rows, cols);
-  print_matrix(out, matrix, rows, cols);
+  print_matrix(out, matrix2, rows, cols);
 
   // Освобождение памяти и закрытие файлов
   for (int k = 0; k < rows; k++) {
