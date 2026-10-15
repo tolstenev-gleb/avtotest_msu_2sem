@@ -203,7 +203,7 @@ void task102(int** matrix, int** matrix2, int *A, int *B, int a, int b) {
       if (count >= 2) {
         for (int k = 0; k < a; k++) {
           if (matrix[A[k]][B[j]] == target) {
-            matrix2[A[i]][B[j]] = 1;
+            matrix2[A[k]][B[j]] = 1;
           }
         }
       } else {
